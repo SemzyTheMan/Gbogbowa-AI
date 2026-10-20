@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#185abd">
+  <title>Gbogbowa</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header><a class="brand" href="/" aria-label="Gbogbowa home"><span class="brand-mark" aria-hidden="true">g.</span><h1>gbogbowa</h1></a></header>
+    <section class="workspace" aria-label="Business assistant">
+      <div class="account">
+        <label for="phone">Business number</label>
+        <input id="phone" type="tel" autocomplete="tel" placeholder="+2348012345678" aria-label="Business phone number with country code" maxlength="20">
+      </div>
+      <div id="conversation" class="conversation" role="log" aria-label="Conversation" aria-live="polite" aria-relevant="additions text"></div>
+      <div class="voice-area">
+        <button id="record" class="mic" aria-label="Start recording" type="button">
+          <svg class="mic-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="9" y="2" width="6" height="13" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3m-4 0h8"/></svg>
+          <svg class="stop-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="2"/></svg>
+        </button>
+        <h2 id="voice-title">Tap to speak</h2>
+        <p id="voice-help">Up to 2 minutes</p>
+        <span id="timer" class="timer" hidden>00:00 / 02:00</span>
+        <div id="recording-review" hidden>
+          <audio id="preview" controls aria-label="Review your recording"></audio>
+          <div class="review-actions"><button id="discard" class="text-button" type="button">Discard</button><button id="send-voice" class="primary" type="button">Review transcript</button></div>
+        </div>
+      </div>
+      <form id="message-form">
+        <label class="sr-only" for="message">Type an instruction or review your transcript</label>
+        <div class="composer"><textarea id="message" rows="2" maxlength="4000" placeholder="Or type here…"></textarea><button id="send" class="primary" type="submit">Send <span aria-hidden="true">↗</span></button></div>
+      </form>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+</body>
+</html>
